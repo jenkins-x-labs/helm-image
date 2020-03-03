@@ -23,6 +23,7 @@ RUN cd /usr/src  && \
 FROM centos:7
 # need to copy the whole git source else it doesn't clone the helm plugin repos below
 COPY --from=0 /usr/local/git /usr/local/git
+COPY --from=0 /usr/bin/make /usr/bin/make
 COPY --from=0 /out /usr/local/bin
 
 ENV PATH /usr/local/bin:/usr/local/git/bin:$PATH
