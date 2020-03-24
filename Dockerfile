@@ -31,4 +31,7 @@ ENV HELM_PLUGINS /root/.cache/helm/plugins/
 
 RUN helm plugin install https://github.com/databus23/helm-diff && \
     helm plugin install https://github.com/aslafy-z/helm-git.git && \
-    helm plugin install https://github.com/hayorov/helm-gcs
+    helm plugin install https://github.com/rawlingsj/helm-gcs
+
+# custom built helm-gcs until this is merged https://github.com/hayorov/helm-gcs/pull/44
+COPY helm-gcs /root/.cache/helm/plugins/https-github.com-rawlingsj-helm-gcs/bin/helm-gcs
